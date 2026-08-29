@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Antigravity Projects\\ASP.NET\\GameStore.Api\\GameStore.Api.csproj": {}
+    "C:\\Users\\arths\\OneDrive\\Documents\\asp.net\\GameStore.Api\\GameStore.Api.csproj": {}
   },
   "projects": {
-    "D:\\Antigravity Projects\\ASP.NET\\GameStore.Api\\GameStore.Api.csproj": {
+    "C:\\Users\\arths\\OneDrive\\Documents\\asp.net\\GameStore.Api\\GameStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Antigravity Projects\\ASP.NET\\GameStore.Api\\GameStore.Api.csproj",
+        "projectUniqueName": "C:\\Users\\arths\\OneDrive\\Documents\\asp.net\\GameStore.Api\\GameStore.Api.csproj",
         "projectName": "GameStore.Api",
-        "projectPath": "D:\\Antigravity Projects\\ASP.NET\\GameStore.Api\\GameStore.Api.csproj",
+        "projectPath": "C:\\Users\\arths\\OneDrive\\Documents\\asp.net\\GameStore.Api\\GameStore.Api.csproj",
         "packagesPath": "C:\\Users\\arths\\.nuget\\packages\\",
-        "outputPath": "D:\\Antigravity Projects\\ASP.NET\\GameStore.Api\\obj\\",
+        "outputPath": "C:\\Users\\arths\\OneDrive\\Documents\\asp.net\\GameStore.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arths\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -45,6 +45,18 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[10.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

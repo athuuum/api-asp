@@ -40,7 +40,7 @@ namespace GameStore.Api.Data.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("Game");
+                    b.ToTable("Games");
                 });
 
             modelBuilder.Entity("GameStore.Api.Models.Genre", b =>

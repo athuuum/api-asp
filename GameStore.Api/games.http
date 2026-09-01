@@ -4,13 +4,6 @@ GET http://localhost:5118/games/2
 POST http://localhost:5118/games/
 Content-Type: application/json
 
-{
-    "name": "",
-    "genre": "Platformer",
-    "price": 59.99,
-    "releaseDate": "2023-10-20"
-}
-
 ###
 PUT http://localhost:5118/games/1
 Content-Type: application/json

@@ -1,8 +1,16 @@
-GET http://localhost:5118/games/2
+GET http://localhost:5118/games/
 
 ###
 POST http://localhost:5118/games/
 Content-Type: application/json
+
+{
+    "name": "Minecraft III",
+    "genreId": 3,
+    "price": 100,
+    "releaseDate": "2026-05-17"
+}
+
 
 ###
 PUT http://localhost:5118/games/1
@@ -10,7 +18,7 @@ Content-Type: application/json
 
 {
     "name": "Minecraft II",
-    "genre": "Sandbox",
+    "genreId": 2,
     "price": 100,
     "releaseDate": "2026-05-17"
 }

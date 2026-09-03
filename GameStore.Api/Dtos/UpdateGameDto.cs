@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace GameStore.Api.Dtos;
-public record UpdateCreateGameDto(
+public record UpdateGameDto(
     [Required] [StringLength(50)] string Name,
     int GenreId,
     [Range(0, double.MaxValue)] decimal Price,

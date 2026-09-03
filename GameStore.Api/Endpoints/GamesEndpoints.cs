@@ -13,7 +13,6 @@ public static class GamesEndpoints
     {
         var group = app.MapGroup("/games");
 
-        // GET /games
         group.MapGet("/", async (GameStoreContext dbContext) =>     
             await dbContext.Games
                 .Include(game => game.Genre)
@@ -27,7 +26,6 @@ public static class GamesEndpoints
                 .AsNoTracking()
                 .ToListAsync());
 
-        // GET /GAMES/{id}
         group.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
         {
         var game = await dbContext.Games.FindAsync(id);
@@ -44,7 +42,6 @@ public static class GamesEndpoints
         })
         .WithName(GetGameEndpointName);
 
-        // POST /games
         group.MapPost("/", async (CreateGameDto newGame, GameStoreContext dbContext) =>
         {
             Game game = new()
@@ -69,8 +66,7 @@ public static class GamesEndpoints
             return Results.CreatedAtRoute(GetGameEndpointName, new {id = game.Id}, gameDetails);
         });
 
-        // PUT /games/1
-        group.MapPut("/{id}", async (int id, UpdateCreateGameDto updatedGame, GameStoreContext dbContext) =>
+        group.MapPut("/{id}", async (int id, UpdateGameDto updatedGame, GameStoreContext dbContext) =>
         {
             var existingGame = await dbContext.Games.FindAsync(id);
 
@@ -89,7 +85,6 @@ public static class GamesEndpoints
             return Results.NoContent();
         });
 
-        // DELETE /games/{id}
         group.MapDelete("/{id}", async (int id, GameStoreContext dbContext) =>
         {
             await dbContext.Games.

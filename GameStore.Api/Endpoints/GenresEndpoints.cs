@@ -1,5 +1,6 @@
 using GameStore.Api.Data;
 using GameStore.Api.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Endpoints;
 

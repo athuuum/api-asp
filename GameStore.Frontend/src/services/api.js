@@ -3,13 +3,13 @@ const API_BASE_URL = 'http://localhost:5118';
 async function handleResponse(response) {
   if (!response.ok) {
     const text = await response.text();
-    throw new Error(text || `Erro ${response.status}: ${response.statusText}`);
+    throw new Error(text || `Error ${response.status}: ${response.statusText}`);
   }
   if (response.status === 204) return null;
   return response.json();
 }
 
-
+//games
 export async function getGames() {
   const res = await fetch(`${API_BASE_URL}/games`);
   return handleResponse(res);
@@ -45,7 +45,7 @@ export async function deleteGame(id) {
   return handleResponse(res);
 }
 
-
+//genres
 export async function getGenres() {
   const res = await fetch(`${API_BASE_URL}/genres`);
   return handleResponse(res);

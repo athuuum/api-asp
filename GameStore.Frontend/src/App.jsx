@@ -12,6 +12,7 @@ export default function App() {
   const [deleteTarget, setDeleteTarget] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetchGames();
@@ -69,16 +70,28 @@ export default function App() {
               <h2 className="text-lg font-semibold text-gray-700">
                 Games ({games.length})
               </h2>
-              <button
-                onClick={() => { setEditingGame(null); setFormOpen(true); }}
-                className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
-              >
-                + New Game
-              </button>
+              <div className="flex items-center gap-3">
+                <input
+                  type="text"
+                  placeholder="Search by name or genre..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+                <button
+                  onClick={() => { setEditingGame(null); setFormOpen(true); }}
+                  className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors"
+                >
+                  + New Game
+                </button>
+              </div>
             </div>
 
             <GamesTable
-              games={games}
+              games={games.filter((g) =>
+                g.name.toLowerCase().includes(search.toLowerCase()) ||
+                g.genre.toLowerCase().includes(search.toLowerCase())
+              )}
               onEdit={handleEdit}
               onDelete={setDeleteTarget}
             />
